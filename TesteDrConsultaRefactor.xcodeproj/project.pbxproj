@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33273EAE835C841A054A9A5C /* Pods_TesteDrConsultaRefactor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */; };
 		4920016120E902800002E6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920016020E902800002E6AC /* AppDelegate.swift */; };
 		4920016620E902800002E6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016420E902800002E6AC /* Main.storyboard */; };
 		4920016820E902810002E6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4920016720E902810002E6AC /* Assets.xcassets */; };
@@ -22,6 +23,9 @@
 		4920016A20E902810002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4920016C20E902820002E6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4920017220E902CB0002E6AC /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.release.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.release.xcconfig"; sourceTree = "<group>"; };
+		BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TesteDrConsultaRefactor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5235D48D60F34B9180F44E4 /* Pods-TesteDrConsultaRefactor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33273EAE835C841A054A9A5C /* Pods_TesteDrConsultaRefactor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				4920015F20E902800002E6AC /* TesteDrConsultaRefactor */,
 				4920015E20E902800002E6AC /* Products */,
+				E27A4C87EAFFCA2F59B9C22E /* Pods */,
+				B7A71D2C7855BBDAC604C221 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,23 @@
 			path = Games;
 			sourceTree = "<group>";
 		};
+		B7A71D2C7855BBDAC604C221 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E27A4C87EAFFCA2F59B9C22E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5235D48D60F34B9180F44E4 /* Pods-TesteDrConsultaRefactor.debug.xcconfig */,
+				955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4920016F20E902820002E6AC /* Build configuration list for PBXNativeTarget "TesteDrConsultaRefactor" */;
 			buildPhases = (
+				20A0FED9FBE2276866C1F700 /* [CP] Check Pods Manifest.lock */,
 				4920015920E902800002E6AC /* Sources */,
 				4920015A20E902800002E6AC /* Frameworks */,
 				4920015B20E902800002E6AC /* Resources */,
+				D2717C712032FBD39EC9E647 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +187,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20A0FED9FBE2276866C1F700 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TesteDrConsultaRefactor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2717C712032FBD39EC9E647 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4920015920E902800002E6AC /* Sources */ = {
@@ -310,6 +377,7 @@
 		};
 		4920017020E902820002E6AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5235D48D60F34B9180F44E4 /* Pods-TesteDrConsultaRefactor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +396,7 @@
 		};
 		4920017120E902820002E6AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
