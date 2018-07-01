@@ -15,6 +15,12 @@ protocol GameFilterViewDelegate {
 
 class GamesFilterView: UIView {
     
+    class var instance: GamesFilterView {
+        let nib = UINib(nibName: "GamesFilterView", bundle: nil)
+        let view = nib.instantiate(withOwner: nil, options: nil).first as! GamesFilterView
+        return view
+    }
+    
     var delegate: GameFilterViewDelegate?
     var currentGamesValue = 25 {
         didSet {
@@ -24,8 +30,8 @@ class GamesFilterView: UIView {
     
     let gamesCountLabel = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         let segmentedItems = ["Nome", "Ranking"]
         let segmentedControl = UISegmentedControl(items: segmentedItems)
         let quantitySlider = UISlider()
@@ -35,6 +41,23 @@ class GamesFilterView: UIView {
         segmentedControl.addTarget(self, action: #selector(filteredMethod(_:)), for: .valueChanged)
         quantitySlider.addTarget(self, action: #selector(quantityItem(_:)), for: .valueChanged)
         confirmButtonAction.addTarget(self, action: #selector(confirmFilteredAction(_:)), for: .touchUpInside)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        quantitySlider.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        quantitySlider.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(segmentedControl)
+        addSubview(quantitySlider)
+        segmentedControl.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        segmentedControl.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
+        segmentedControl.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
+        quantitySlider.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
+        quantitySlider.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
+        quantitySlider.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: -16).isActive = true
+        quantitySlider.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     @objc func filteredMethod(_ sender: UISegmentedControl){

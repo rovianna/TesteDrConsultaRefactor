@@ -21,32 +21,52 @@ class GamesTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let gap: CGFloat = 10
-        let labelHeight: CGFloat = 30
-        let labelWidth: CGFloat = 150
-        let lineGap: CGFloat = 5
-        let label2Y: CGFloat = gap + labelHeight + lineGap
-        let imageSize: CGFloat = 30
-        
-        gameDescriptionLabel = UILabel()
-        gameDescriptionLabel.frame = CGRect(x: gap, y: gap, width: labelWidth, height: labelHeight)
-        gameDescriptionLabel.textColor = UIColor.blue
-        contentView.addSubview(gameDescriptionLabel)
+        self.backgroundColor = UIColor.twitchPurple
+        selectionStyle = .none
         
         positionLabel = UILabel()
-        positionLabel.frame = CGRect(x: gap, y: label2Y, width: labelWidth, height: labelHeight)
-        positionLabel.textColor = UIColor.black
-        contentView.addSubview(positionLabel)
+        positionLabel.translatesAutoresizingMaskIntoConstraints = false
+        positionLabel.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        addSubview(positionLabel)
+        
+        positionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+        
+        positionLabel.textColor = UIColor.white
         
         thumbnailImageView = UIImageView()
-        thumbnailImageView.frame = CGRect(x: bounds.width - imageSize - gap, y: gap, width: imageSize, height: imageSize)
+        addSubview(thumbnailImageView)
+        thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
+        thumbnailImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        thumbnailImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 24).isActive = true
+        thumbnailImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        thumbnailImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
         thumbnailImageView.image = #imageLiteral(resourceName: "iconFilter")
-        contentView.addSubview(thumbnailImageView)
+        
+        gameDescriptionLabel = UILabel()
+        addSubview(gameDescriptionLabel)
+        gameDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        gameDescriptionLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        gameDescriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 16).isActive = true
+        gameDescriptionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        gameDescriptionLabel.leftAnchor.constraint(equalTo: thumbnailImageView.rightAnchor, constant: 16).isActive = true
+        gameDescriptionLabel.textColor = UIColor.white
+        
+        positionLabel.topAnchor.constraint(equalTo: gameDescriptionLabel.bottomAnchor, constant: 16).isActive = true
         
         viewersLabel = UILabel()
-        viewersLabel.frame = CGRect(x: bounds.width - imageSize - gap, y: label2Y, width: imageSize, height: imageSize)
-        viewersLabel.textColor = UIColor.black
-        contentView.addSubview(viewersLabel)
+        viewersLabel.translatesAutoresizingMaskIntoConstraints = false
+        viewersLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(viewersLabel)
+        viewersLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+        viewersLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24).isActive = true
+        gameDescriptionLabel.bottomAnchor.constraint(equalTo: viewersLabel.topAnchor, constant: -16).isActive = true
+        positionLabel.rightAnchor.constraint(equalTo: viewersLabel.leftAnchor, constant: -16).isActive = true
+        viewersLabel.textColor = UIColor.white
     }
     
+    func configure(game: String, viewers: Int, position: Int){
+        gameDescriptionLabel.text = game
+        viewersLabel.text = "\(viewers)"
+        positionLabel.text = "#\(position)"
+    }
 }

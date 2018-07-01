@@ -9,7 +9,7 @@
 import UIKit
 
 class GameFilterViewController: UIViewController {
-
+    
     let gamesTableView = UITableView()
     
     override func viewDidLoad() {
@@ -18,6 +18,7 @@ class GameFilterViewController: UIViewController {
         self.navigationItem.title = "Games"
         let filterButton = UIBarButtonItem(image: #imageLiteral(resourceName: "iconFilter"), style: .plain, target: self, action: #selector(showFilterView(_:)))
         self.navigationItem.rightBarButtonItem = filterButton
+        gamesTableView.backgroundColor = UIColor.twitchPurple
         self.view.addSubview(gamesTableView)
         gamesTableView.translatesAutoresizingMaskIntoConstraints = false
         gamesTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -30,7 +31,12 @@ class GameFilterViewController: UIViewController {
     }
     
     @objc func showFilterView(_ sender: UIBarButtonItem){
-        
+        let view = GamesFilterView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        view.backgroundColor = UIColor.twitchPurple
+        UIView.animate(withDuration: 0.3) {
+            self.view.addSubview(view)
+            self.view.bringSubview(toFront: view)
+        }
     }
 }
 
@@ -45,7 +51,7 @@ extension GameFilterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = GamesTableViewCell(style: .default, reuseIdentifier: "gameCell")
-        
+        cell.configure(game: "Game of Thrones", viewers: 1000, position: 1)
         return cell
     }
     

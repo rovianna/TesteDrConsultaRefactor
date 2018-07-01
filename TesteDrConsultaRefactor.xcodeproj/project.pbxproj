@@ -99,7 +99,6 @@
 		4920017620E903290002E6AC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4920017820E90B1F0002E6AC /* Filter */,
 				4920017720E903390002E6AC /* Games */,
 			);
 			path = Controller;
@@ -108,6 +107,7 @@
 		4920017720E903390002E6AC /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				4920017820E90B1F0002E6AC /* Filter */,
 				4920018220E91BEA0002E6AC /* Model */,
 				4920017F20E91B600002E6AC /* Cell */,
 				4920017B20E9115E0002E6AC /* GameFilterViewController.swift */,
