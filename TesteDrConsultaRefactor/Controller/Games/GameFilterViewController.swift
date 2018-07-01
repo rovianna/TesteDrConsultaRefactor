@@ -25,10 +25,29 @@ class GameFilterViewController: UIViewController {
         gamesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         gamesTableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         gamesTableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        gamesTableView.dataSource = self
+        gamesTableView.delegate = self
     }
     
     @objc func showFilterView(_ sender: UIBarButtonItem){
         
     }
+}
+
+extension GameFilterViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = GamesTableViewCell(style: .default, reuseIdentifier: "gameCell")
+        
+        return cell
+    }
+    
     
 }
