@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		33273EAE835C841A054A9A5C /* Pods_TesteDrConsultaRefactor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */; };
 		4920016120E902800002E6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920016020E902800002E6AC /* AppDelegate.swift */; };
-		4920016620E902800002E6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016420E902800002E6AC /* Main.storyboard */; };
 		4920016820E902810002E6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4920016720E902810002E6AC /* Assets.xcassets */; };
 		4920016B20E902810002E6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016920E902810002E6AC /* LaunchScreen.storyboard */; };
 		4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017220E902CB0002E6AC /* GlobalVariables.swift */; };
+		4920017A20E90B3A0002E6AC /* GamesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017920E90B3A0002E6AC /* GamesFilterView.swift */; };
+		4920017C20E9115E0002E6AC /* GameFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017B20E9115E0002E6AC /* GameFilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4920015D20E902800002E6AC /* TesteDrConsultaRefactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteDrConsultaRefactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4920016020E902800002E6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4920016520E902800002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4920016720E902810002E6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4920016A20E902810002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4920016C20E902820002E6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4920017220E902CB0002E6AC /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		4920017920E90B3A0002E6AC /* GamesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesFilterView.swift; sourceTree = "<group>"; };
+		4920017B20E9115E0002E6AC /* GameFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFilterViewController.swift; sourceTree = "<group>"; };
 		955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.release.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.release.xcconfig"; sourceTree = "<group>"; };
 		BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TesteDrConsultaRefactor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5235D48D60F34B9180F44E4 /* Pods-TesteDrConsultaRefactor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 				4920017520E902F40002E6AC /* Requests */,
 				4920017420E902E20002E6AC /* Extension */,
 				4920016020E902800002E6AC /* AppDelegate.swift */,
-				4920016420E902800002E6AC /* Main.storyboard */,
 				4920016720E902810002E6AC /* Assets.xcassets */,
 				4920016920E902810002E6AC /* LaunchScreen.storyboard */,
 				4920016C20E902820002E6AC /* Info.plist */,
@@ -91,6 +92,7 @@
 		4920017620E903290002E6AC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4920017820E90B1F0002E6AC /* Filter */,
 				4920017720E903390002E6AC /* Games */,
 			);
 			path = Controller;
@@ -99,8 +101,17 @@
 		4920017720E903390002E6AC /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				4920017B20E9115E0002E6AC /* GameFilterViewController.swift */,
 			);
 			path = Games;
+			sourceTree = "<group>";
+		};
+		4920017820E90B1F0002E6AC /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				4920017920E90B3A0002E6AC /* GamesFilterView.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		B7A71D2C7855BBDAC604C221 /* Frameworks */ = {
@@ -182,7 +193,6 @@
 			files = (
 				4920016B20E902810002E6AC /* LaunchScreen.storyboard in Resources */,
 				4920016820E902810002E6AC /* Assets.xcassets in Resources */,
-				4920016620E902800002E6AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4920017C20E9115E0002E6AC /* GameFilterViewController.swift in Sources */,
+				4920017A20E90B3A0002E6AC /* GamesFilterView.swift in Sources */,
 				4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */,
 				4920016120E902800002E6AC /* AppDelegate.swift in Sources */,
 			);
@@ -242,14 +254,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4920016420E902800002E6AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4920016520E902800002E6AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4920016920E902810002E6AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
