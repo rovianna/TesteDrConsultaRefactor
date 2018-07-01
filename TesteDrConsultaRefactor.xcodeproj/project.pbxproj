@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4920016120E902800002E6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920016020E902800002E6AC /* AppDelegate.swift */; };
-		4920016320E902800002E6AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920016220E902800002E6AC /* ViewController.swift */; };
 		4920016620E902800002E6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016420E902800002E6AC /* Main.storyboard */; };
 		4920016820E902810002E6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4920016720E902810002E6AC /* Assets.xcassets */; };
 		4920016B20E902810002E6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016920E902810002E6AC /* LaunchScreen.storyboard */; };
+		4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017220E902CB0002E6AC /* GlobalVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4920015D20E902800002E6AC /* TesteDrConsultaRefactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteDrConsultaRefactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4920016020E902800002E6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4920016220E902800002E6AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4920016520E902800002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4920016720E902810002E6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4920016A20E902810002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4920016C20E902820002E6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4920017220E902CB0002E6AC /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,46 @@
 		4920015F20E902800002E6AC /* TesteDrConsultaRefactor */ = {
 			isa = PBXGroup;
 			children = (
+				4920017620E903290002E6AC /* Controller */,
+				4920017520E902F40002E6AC /* Requests */,
+				4920017420E902E20002E6AC /* Extension */,
 				4920016020E902800002E6AC /* AppDelegate.swift */,
-				4920016220E902800002E6AC /* ViewController.swift */,
 				4920016420E902800002E6AC /* Main.storyboard */,
 				4920016720E902810002E6AC /* Assets.xcassets */,
 				4920016920E902810002E6AC /* LaunchScreen.storyboard */,
 				4920016C20E902820002E6AC /* Info.plist */,
 			);
 			path = TesteDrConsultaRefactor;
+			sourceTree = "<group>";
+		};
+		4920017420E902E20002E6AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4920017220E902CB0002E6AC /* GlobalVariables.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4920017520E902F40002E6AC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		4920017620E903290002E6AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4920017720E903390002E6AC /* Games */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4920017720E903390002E6AC /* Games */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4920016320E902800002E6AC /* ViewController.swift in Sources */,
+				4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */,
 				4920016120E902800002E6AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
