@@ -10,6 +10,41 @@
 
 import UIKit
 
-class GameListDataSource: NSObject {
+class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+ 
+    weak var tableView: UITableView?
+    
+    init(tableView: UITableView){
+        super.init()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView = tableView
+    }
+    
+    /* The idea is to execute the "block" on the main thread */
+    func onMain(block: @escaping ()->()){
+        DispatchQueue.main.async {
+            block()
+        }
+    }
+    
+    //MARK: Source it up!
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1 //for now
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = GamesTableViewCell(style: .default, reuseIdentifier: "gameCell")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     
 }
