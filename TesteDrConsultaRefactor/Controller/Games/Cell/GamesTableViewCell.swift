@@ -28,7 +28,6 @@ class GamesTableViewCell: UITableViewCell {
         positionLabel.translatesAutoresizingMaskIntoConstraints = false
         positionLabel.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(positionLabel)
-        
         positionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
         
         positionLabel.textColor = UIColor.white
@@ -38,10 +37,11 @@ class GamesTableViewCell: UITableViewCell {
         thumbnailImageView.translatesAutoresizingMaskIntoConstraints = false
         thumbnailImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         thumbnailImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 24).isActive = true
-        thumbnailImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-        thumbnailImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+        thumbnailImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        thumbnailImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        thumbnailImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         thumbnailImageView.image = #imageLiteral(resourceName: "iconFilter")
-        
+        positionLabel.leftAnchor.constraint(equalTo: thumbnailImageView.rightAnchor, constant: 16).isActive = true
         gameDescriptionLabel = UILabel()
         addSubview(gameDescriptionLabel)
         gameDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,6 @@ class GamesTableViewCell: UITableViewCell {
         viewersLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
         viewersLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24).isActive = true
         gameDescriptionLabel.bottomAnchor.constraint(equalTo: viewersLabel.topAnchor, constant: -16).isActive = true
-        positionLabel.rightAnchor.constraint(equalTo: viewersLabel.leftAnchor, constant: -16).isActive = true
         viewersLabel.textColor = UIColor.white
     }
     
