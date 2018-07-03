@@ -14,19 +14,18 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
  
     weak var tableView: UITableView?
     
-    /* So, this is where I'll request the API */
-    
     /* And here's the array! */
     var popularGames = [Game]()
     
-    init(tableView: UITableView){
+    init(tableView: UITableView, games: [Game]){
         super.init()
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.popularGames = games
+            tableView.delegate = self
+            tableView.dataSource = self
         self.tableView = tableView
     }
     
-    /* The idea is to execute the "block" on the main thread */
+    /* The idea is to execute the "block" on the main thread, UI Stuff */
     func onMain(block: @escaping ()->()){
         DispatchQueue.main.async {
             block()
@@ -43,7 +42,8 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = GamesTableViewCell(style: .default, reuseIdentifier: "gameCell")
+        let game = popularGames[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GamesTableViewCell
         return cell
     }
     
