@@ -17,6 +17,7 @@
 		4920017E20E9171A0002E6AC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017D20E9171A0002E6AC /* Colors.swift */; };
 		4920018120E91B750002E6AC /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920018020E91B750002E6AC /* GamesTableViewCell.swift */; };
 		4920018420E91BF90002E6AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920018320E91BF90002E6AC /* Game.swift */; };
+		49ACA88220EB849700826F4F /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACA88120EB849700826F4F /* GameDetailsViewController.swift */; };
 		49EEFBC420EAE74000259E1F /* GameListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEFBC320EAE74000259E1F /* GameListDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		4920017D20E9171A0002E6AC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4920018020E91B750002E6AC /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		4920018320E91BF90002E6AC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		49ACA88120EB849700826F4F /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
 		49EEFBC320EAE74000259E1F /* GameListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListDataSource.swift; sourceTree = "<group>"; };
 		955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.release.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.release.xcconfig"; sourceTree = "<group>"; };
 		BE7132CE4D105F07EFD373B2 /* Pods_TesteDrConsultaRefactor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TesteDrConsultaRefactor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				4920018220E91BEA0002E6AC /* Model */,
 				4920017F20E91B600002E6AC /* Cell */,
 				4920017B20E9115E0002E6AC /* GameFilterViewController.swift */,
+				49ACA88120EB849700826F4F /* GameDetailsViewController.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4920017C20E9115E0002E6AC /* GameFilterViewController.swift in Sources */,
+				49ACA88220EB849700826F4F /* GameDetailsViewController.swift in Sources */,
 				4920018120E91B750002E6AC /* GamesTableViewCell.swift in Sources */,
 				4920018420E91BF90002E6AC /* Game.swift in Sources */,
 				4920017E20E9171A0002E6AC /* Colors.swift in Sources */,

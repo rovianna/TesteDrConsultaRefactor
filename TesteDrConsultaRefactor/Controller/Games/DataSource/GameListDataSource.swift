@@ -14,6 +14,11 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
  
     weak var tableView: UITableView?
     
+    /* So, this is where I'll request the API */
+    
+    /* And here's the array! */
+    var popularGames = [Game]()
+    
     init(tableView: UITableView){
         super.init()
         tableView.delegate = self
@@ -34,7 +39,7 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 //for now
+        return popularGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
