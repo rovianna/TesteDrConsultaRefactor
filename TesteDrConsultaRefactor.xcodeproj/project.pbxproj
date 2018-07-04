@@ -16,6 +16,7 @@
 		4920017E20E9171A0002E6AC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017D20E9171A0002E6AC /* Colors.swift */; };
 		4920018420E91BF90002E6AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920018320E91BF90002E6AC /* Game.swift */; };
 		493FA2B020ECEACE000EFB2C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493FA2AF20ECEACE000EFB2C /* FilterViewController.swift */; };
+		493FA2B220ECEEFB000EFB2C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493FA2B120ECEEFB000EFB2C /* UIImageView.swift */; };
 		4976609A20EC20B40003C2B1 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4976609920EC20B40003C2B1 /* Game.storyboard */; };
 		4976609D20EC21C60003C2B1 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4976609B20EC21C60003C2B1 /* GamesTableViewCell.swift */; };
 		4976609E20EC21C60003C2B1 /* GamesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4976609C20EC21C60003C2B1 /* GamesTableViewCell.xib */; };
@@ -34,6 +35,7 @@
 		4920017D20E9171A0002E6AC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4920018320E91BF90002E6AC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		493FA2AF20ECEACE000EFB2C /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		493FA2B120ECEEFB000EFB2C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		4976609920EC20B40003C2B1 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		4976609B20EC21C60003C2B1 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		4976609C20EC21C60003C2B1 /* GamesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesTableViewCell.xib; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				4920017220E902CB0002E6AC /* GlobalVariables.swift */,
 				4920017D20E9171A0002E6AC /* Colors.swift */,
+				493FA2B120ECEEFB000EFB2C /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				493FA2B020ECEACE000EFB2C /* FilterViewController.swift in Sources */,
 				4920018420E91BF90002E6AC /* Game.swift in Sources */,
 				4920017E20E9171A0002E6AC /* Colors.swift in Sources */,
+				493FA2B220ECEEFB000EFB2C /* UIImageView.swift in Sources */,
 				49EEFBC420EAE74000259E1F /* GameListDataSource.swift in Sources */,
 				4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */,
 				4920016120E902800002E6AC /* AppDelegate.swift in Sources */,
