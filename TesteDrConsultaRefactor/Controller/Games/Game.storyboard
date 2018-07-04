@@ -27,20 +27,112 @@
             </objects>
             <point key="canvasLocation" x="-735" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="rH2-TZ-bWU">
             <objects>
-                <viewController id="yVv-76-5wU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filter" id="yVv-76-5wU" customClass="FilterViewController" customModule="TesteDrConsultaRefactor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyu-t7-ELa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lux-Ow-hRT">
+                                <rect key="frame" x="321" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OfY-df-Bhq"/>
+                                    <constraint firstAttribute="width" constant="30" id="VJd-3h-0gb"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelFilterAction:" destination="yVv-76-5wU" eventType="touchUpInside" id="cTX-5F-0eB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrar por:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNa-Z6-BIg">
+                                <rect key="frame" x="16" y="58" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="guY-tH-rFg">
+                                <rect key="frame" x="16" y="87" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Posição"/>
+                                    <segment title="Nome"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="filterSegmentedControl:" destination="yVv-76-5wU" eventType="valueChanged" id="w2d-s2-Qiw"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantidade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-KF-vly">
+                                <rect key="frame" x="16" y="133" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-le-bns">
+                                <rect key="frame" x="16" y="162" width="345" height="31"/>
+                                <connections>
+                                    <action selector="quantitySliderAction:" destination="yVv-76-5wU" eventType="valueChanged" id="UP0-wy-qOV"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-tD-mmz">
+                                <rect key="frame" x="259" y="200" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="SnL-rG-vgm"/>
+                                    <constraint firstAttribute="height" constant="21" id="cjc-hc-cZh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65x-Vy-0HA">
+                                <rect key="frame" x="18" y="312" width="343" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="oIu-wo-bhK"/>
+                                </constraints>
+                                <state key="normal" title="CONFIRMAR">
+                                    <color key="titleColor" red="0.3921568627" green="0.25490196079999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmFilterAction:" destination="yVv-76-5wU" eventType="touchUpInside" id="o92-18-S1u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3921568627" green="0.25490196079999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="65x-Vy-0HA" firstAttribute="top" secondItem="6E7-tD-mmz" secondAttribute="bottom" constant="91" id="1aP-s5-N9A"/>
+                            <constraint firstItem="guY-tH-rFg" firstAttribute="top" secondItem="tNa-Z6-BIg" secondAttribute="bottom" constant="8" id="5zg-Xu-1Gw"/>
+                            <constraint firstItem="2Xv-KF-vly" firstAttribute="top" secondItem="guY-tH-rFg" secondAttribute="bottom" constant="18" id="BPd-bR-1j2"/>
+                            <constraint firstItem="tNa-Z6-BIg" firstAttribute="top" secondItem="lux-Ow-hRT" secondAttribute="bottom" constant="8" id="BeX-vZ-aQc"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="2Xv-KF-vly" secondAttribute="trailing" constant="16" id="C2k-DS-aEE"/>
+                            <constraint firstItem="lux-Ow-hRT" firstAttribute="top" secondItem="9Uq-Mt-Jls" secondAttribute="top" id="KJv-tg-abk"/>
+                            <constraint firstItem="65x-Vy-0HA" firstAttribute="leading" secondItem="9Uq-Mt-Jls" secondAttribute="leading" constant="18" id="M5n-9t-o7Q"/>
+                            <constraint firstItem="Nyh-le-bns" firstAttribute="top" secondItem="2Xv-KF-vly" secondAttribute="bottom" constant="8" id="N7J-ld-Vlf"/>
+                            <constraint firstItem="Nyh-le-bns" firstAttribute="leading" secondItem="9Uq-Mt-Jls" secondAttribute="leading" constant="18" id="W2m-JI-Ijl"/>
+                            <constraint firstItem="2Xv-KF-vly" firstAttribute="leading" secondItem="9Uq-Mt-Jls" secondAttribute="leading" constant="16" id="ZRg-Kd-0hK"/>
+                            <constraint firstItem="tNa-Z6-BIg" firstAttribute="leading" secondItem="9Uq-Mt-Jls" secondAttribute="leading" constant="16" id="ZyX-bS-0td"/>
+                            <constraint firstItem="tNa-Z6-BIg" firstAttribute="top" secondItem="lux-Ow-hRT" secondAttribute="bottom" constant="8" id="dtB-mO-X2D"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="guY-tH-rFg" secondAttribute="trailing" constant="16" id="e48-em-inX"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="lux-Ow-hRT" secondAttribute="trailing" constant="24" id="kvu-VD-ZF4"/>
+                            <constraint firstItem="guY-tH-rFg" firstAttribute="leading" secondItem="9Uq-Mt-Jls" secondAttribute="leading" constant="16" id="o5p-RB-NXW"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="65x-Vy-0HA" secondAttribute="trailing" constant="14" id="qWW-AO-0cW"/>
+                            <constraint firstItem="6E7-tD-mmz" firstAttribute="top" secondItem="Nyh-le-bns" secondAttribute="bottom" constant="8" id="sn7-9b-5hX"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="6E7-tD-mmz" secondAttribute="trailing" constant="16" id="uPw-8G-8U8"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="Nyh-le-bns" secondAttribute="trailing" constant="16" id="yG3-89-f3R"/>
+                            <constraint firstItem="9Uq-Mt-Jls" firstAttribute="trailing" secondItem="tNa-Z6-BIg" secondAttribute="trailing" constant="16" id="ypx-AT-yGr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Uq-Mt-Jls"/>
                     </view>
+                    <connections>
+                        <outlet property="quantitySelectedLabel" destination="6E7-tD-mmz" id="VTR-m3-z1H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPQ-kl-Sj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-452"/>
+            <point key="canvasLocation" x="-2" y="-453"/>
         </scene>
         <!--Game Filter View Controller-->
         <scene sceneID="9FG-qo-MUi">

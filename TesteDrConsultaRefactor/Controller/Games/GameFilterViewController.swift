@@ -12,8 +12,9 @@ class GameFilterViewController: UIViewController {
     
 
     @IBOutlet weak var gamesTableView: UITableView!
-            var games = [Game(game: "Game of Thrones", image: "lala", position: 1, viewers: 10000)]
-    
+    var games = [Game(game: "Game of Thrones", image: "lala", position: 1, viewers: 10000)]
+    let gameStoryboard = UIStoryboard.init(name: "Game", bundle: nil)
+
     var source: GameListDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,14 @@ class GameFilterViewController: UIViewController {
     }
     
     @IBAction func showFilterView(_ sender: Any) {
-        
+        let filterView = gameStoryboard.instantiateViewController(withIdentifier: "filter")
+        self.navigationController?.present(filterView, animated: true, completion: nil)
     }
 }
 
 extension GameFilterViewController: GameListDataSourceDelegate {
     func selectedGame(selectedGame: Game) {
-        let storyboard = UIStoryboard.init(name: "Game", bundle: nil)
-        let gameDetails = storyboard.instantiateViewController(withIdentifier: "details") as! GameDetailsViewController
+        let gameDetails = gameStoryboard.instantiateViewController(withIdentifier: "details") as! GameDetailsViewController
         gameDetails.game = selectedGame
         self.navigationController?.show(gameDetails, sender: nil)
     }

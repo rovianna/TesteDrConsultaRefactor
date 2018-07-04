@@ -20,7 +20,6 @@ class GameDetailsViewController: UIViewController {
         assert(game != nil, "A Game must be passed")
         guard let game = game else { return }
         self.navigationItem.title = "\(game.game)"
-        
     }
 
 }
