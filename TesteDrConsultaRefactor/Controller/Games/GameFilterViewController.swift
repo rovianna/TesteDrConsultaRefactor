@@ -40,12 +40,15 @@ class GameFilterViewController: UIViewController {
     }
     
     @IBAction func showFilterView(_ sender: Any) {
-
+        
     }
 }
 
 extension GameFilterViewController: GameListDataSourceDelegate {
     func selectedGame(selectedGame: Game) {
-        
+        let storyboard = UIStoryboard.init(name: "Game", bundle: nil)
+        let gameDetails = storyboard.instantiateViewController(withIdentifier: "details") as! GameDetailsViewController
+        gameDetails.game = selectedGame
+        self.navigationController?.show(gameDetails, sender: nil)
     }
 }

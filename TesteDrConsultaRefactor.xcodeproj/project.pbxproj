@@ -12,7 +12,6 @@
 		4920016820E902810002E6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4920016720E902810002E6AC /* Assets.xcassets */; };
 		4920016B20E902810002E6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4920016920E902810002E6AC /* LaunchScreen.storyboard */; };
 		4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017220E902CB0002E6AC /* GlobalVariables.swift */; };
-		4920017A20E90B3A0002E6AC /* GamesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017920E90B3A0002E6AC /* GamesFilterView.swift */; };
 		4920017C20E9115E0002E6AC /* GameFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017B20E9115E0002E6AC /* GameFilterViewController.swift */; };
 		4920017E20E9171A0002E6AC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920017D20E9171A0002E6AC /* Colors.swift */; };
 		4920018420E91BF90002E6AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920018320E91BF90002E6AC /* Game.swift */; };
@@ -30,7 +29,6 @@
 		4920016A20E902810002E6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4920016C20E902820002E6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4920017220E902CB0002E6AC /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
-		4920017920E90B3A0002E6AC /* GamesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesFilterView.swift; sourceTree = "<group>"; };
 		4920017B20E9115E0002E6AC /* GameFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFilterViewController.swift; sourceTree = "<group>"; };
 		4920017D20E9171A0002E6AC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4920018320E91BF90002E6AC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		4920017820E90B1F0002E6AC /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				4920017920E90B3A0002E6AC /* GamesFilterView.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 				4920018420E91BF90002E6AC /* Game.swift in Sources */,
 				4920017E20E9171A0002E6AC /* Colors.swift in Sources */,
 				49EEFBC420EAE74000259E1F /* GameListDataSource.swift in Sources */,
-				4920017A20E90B3A0002E6AC /* GamesFilterView.swift in Sources */,
 				4920017320E902CB0002E6AC /* GlobalVariables.swift in Sources */,
 				4920016120E902800002E6AC /* AppDelegate.swift in Sources */,
 			);
