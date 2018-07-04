@@ -42,13 +42,21 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let nib = UINib(nibName: "GamesTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
         let game = popularGames[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GamesTableViewCell
+        cell.configure(game: game)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! GamesTableViewCell
+        return cell.frame.size.height
     }
     
     

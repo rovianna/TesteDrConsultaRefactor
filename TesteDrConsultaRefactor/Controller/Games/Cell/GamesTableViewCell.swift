@@ -15,10 +15,11 @@ class GamesTableViewCell: UITableViewCell {
     @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var viewersLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+ 
+    func configure(game: Game){
+        gameTitleLabel.text = game.game
+        positionLabel.text = "#\(game.position)"
+        viewersLabel.text = "\(game.viewers)"
     }
-    
     
 }
