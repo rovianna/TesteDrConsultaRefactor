@@ -8,6 +8,10 @@
 
 /* LET'S DO THIS */
 
+protocol GameListDataSourceDelegate {
+    func selectedGame(selectedGame: Game)
+}
+
 import UIKit
 
 class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
@@ -16,12 +20,12 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     /* And here's the array! */
     var popularGames = [Game]()
-    
+    var delegate: GameListDataSourceDelegate?
     init(tableView: UITableView, games: [Game]){
         super.init()
         self.popularGames = games
-            tableView.delegate = self
-            tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         self.tableView = tableView
     }
     
@@ -46,18 +50,17 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.register(nib, forCellReuseIdentifier: "cell")
         let game = popularGames[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GamesTableViewCell
+        cell.selectionStyle = .none
         cell.configure(game: game)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        delegate?.selectedGame(selectedGame: popularGames[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! GamesTableViewCell
         return cell.frame.size.height
     }
-    
-    
 }
