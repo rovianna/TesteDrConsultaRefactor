@@ -19,7 +19,18 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView?
     
     /* And here's the array! */
-    var popularGames = [Game]()
+    var filters : [GameFilter]? {
+        didSet {
+            popularGames = filterGames(data: popularGames)
+        }
+    }
+    var popularGames = [Game]() {
+        didSet {
+            onMain {
+                 self.tableView?.reloadData()
+            }
+        }
+    }
     var delegate: GameListDataSourceDelegate?
     init(tableView: UITableView, games: [Game]){
         super.init()
@@ -27,6 +38,16 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView = tableView
+    }
+    
+    func filterGames(data: [Game]) -> [Game] {
+        var gamesToFilter = data
+        if let filters = filters {
+            for filter in filters {
+                gamesToFilter = filter.apply(filters: gamesToFilter)
+            }
+        }
+        return gamesToFilter
     }
     
     /* The idea is to execute the "block" on the main thread, UI Stuff */

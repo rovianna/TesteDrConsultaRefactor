@@ -8,8 +8,53 @@
 
 import UIKit
 
-class FilterViewController: UIViewController {
+protocol GameFilter {
+    func apply(filters: [Game]) -> [Game]
+}
 
+protocol FilterViewControllerDelegate {
+    func selected(filters: [GameFilter])
+}
+
+class GameSort : GameFilter {
+    var sortBy: Int
+    
+    init(sortBy: Int) {
+        self.sortBy = sortBy
+    }
+    
+    func apply(filters: [Game]) -> [Game] {
+        switch sortBy {
+        case 1: return sortByName(games: filters)
+        default: return sortByPosition(games: filters)
+        }
+    }
+    
+    func sortByPosition(games: [Game]) -> [Game] {
+        var gamesFilter = games
+        gamesFilter.sort(by: {left, right in
+            return left.position < right.position
+        })
+        return gamesFilter
+    }
+    
+    func sortByName(games: [Game]) -> [Game] {
+        var gamesFilter = games
+        gamesFilter.sort(by: {left, right in
+            let game1 = left.game
+            let game2 = right.game
+            let compare = game1.localizedCompare(game2) == .orderedAscending
+            return compare
+        })
+        return gamesFilter
+    }
+    
+}
+
+class FilterViewController: UIViewController {
+    
+    
+    @IBOutlet weak var toFilterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var quantitySelectedLabel: UILabel!
     var quantitySlider : Int = 25 {
         didSet {
@@ -17,13 +62,10 @@ class FilterViewController: UIViewController {
         }
     }
     
+    var delegate: FilterViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    @IBAction func filterSegmentedControl(_ sender: UISegmentedControl) {
         
     }
     
@@ -33,6 +75,10 @@ class FilterViewController: UIViewController {
     
     
     @IBAction func confirmFilterAction(_ sender: UIButton) {
+        var filter = [GameFilter]()
+        let gameSort = GameSort(sortBy: toFilterSegmentedControl.selectedSegmentIndex)
+        filter.append(gameSort)
+        delegate?.selected(filters: filter)
         self.dismiss(animated: true, completion: nil)
     }
     

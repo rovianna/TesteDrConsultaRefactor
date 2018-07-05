@@ -61,9 +61,6 @@
                                     <segment title="Nome"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="filterSegmentedControl:" destination="yVv-76-5wU" eventType="valueChanged" id="w2d-s2-Qiw"/>
-                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantidade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-KF-vly">
                                 <rect key="frame" x="16" y="133" width="343" height="21"/>
@@ -128,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="quantitySelectedLabel" destination="6E7-tD-mmz" id="VTR-m3-z1H"/>
+                        <outlet property="toFilterSegmentedControl" destination="guY-tH-rFg" id="Pu7-cC-EED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPQ-kl-Sj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +145,7 @@
                                 <color key="backgroundColor" red="0.38154667619999999" green="0.2490065098" blue="0.63251572850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.38154667619999999" green="0.2490065098" blue="0.63251572850000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="U5G-jL-cMt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="U5G-jL-cMt">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U5G-jL-cMt" id="7MP-sw-MBH">

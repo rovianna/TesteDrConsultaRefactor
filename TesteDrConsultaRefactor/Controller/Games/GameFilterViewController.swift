@@ -8,11 +8,15 @@
 
 import UIKit
 
-class GameFilterViewController: UIViewController {
+class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
+    func selected(filters: [GameFilter]) {
+        self.source?.filters = filters
+    }
+    
     
 
     @IBOutlet weak var gamesTableView: UITableView!
-    var games = [Game(game: "Game of Thrones", image: "lala", position: 1, viewers: 10000)]
+    var games = [Game(game: "Game of Thrones", image: "lala", position: 1, viewers: 10000), Game(game: "Fortnite", image: "lala", position: 2, viewers: 5000), Game(game: "Dota", image: "lala", position: 3, viewers: 2500), Game(game: "Starcraft", image: "lala", position: 4, viewers: 1500)]
     let gameStoryboard = UIStoryboard.init(name: "Game", bundle: nil)
 
     var source: GameListDataSource?
@@ -41,7 +45,8 @@ class GameFilterViewController: UIViewController {
     }
     
     @IBAction func showFilterView(_ sender: Any) {
-        let filterView = gameStoryboard.instantiateViewController(withIdentifier: "filter")
+        let filterView = gameStoryboard.instantiateViewController(withIdentifier: "filter") as! FilterViewController
+        filterView.delegate = self
         self.navigationController?.present(filterView, animated: true, completion: nil)
     }
 }
