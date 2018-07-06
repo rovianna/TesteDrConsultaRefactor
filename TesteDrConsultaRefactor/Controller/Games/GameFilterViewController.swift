@@ -14,23 +14,31 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
     }
     
     
-
     @IBOutlet weak var gamesTableView: UITableView!
-    var games = [Game(game: "Game of Thrones", image: "lala", position: 1, viewers: 10000), Game(game: "Fortnite", image: "lala", position: 2, viewers: 5000), Game(game: "Dota", image: "lala", position: 3, viewers: 2500), Game(game: "Starcraft", image: "lala", position: 4, viewers: 1500)]
+    var games = [Game]() {
+        didSet {
+           receiveGames(games)
+        }
+    }
     let gameStoryboard = UIStoryboard.init(name: "Game", bundle: nil)
-
+    let requester = GameRequester()
     var source: GameListDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Games"
         let filterButton = UIBarButtonItem(image: #imageLiteral(resourceName: "iconFilter"), style: .plain, target: self, action: #selector(showFilterView(_:)))
         self.navigationItem.rightBarButtonItem = filterButton
-        receiveGames(games)
+        loadGames()
     }
     
     /* There has to be another function to call the API */
     func loadGames(){
-//        receiveGames(loaded)
+        requester.getTopGames { (response) in
+            switch response {
+            case .failure(let error): print("Error: \(error)")
+            case .sucess(let data): self.games = data
+            }
+        }
     }
     
     func receiveGames(_ games: [Game]) {

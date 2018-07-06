@@ -33,7 +33,7 @@ class GameSort : GameFilter {
     func sortByPosition(games: [Game]) -> [Game] {
         var gamesFilter = games
         gamesFilter.sort(by: {left, right in
-            return left.position < right.position
+            return left.viewers > right.viewers
         })
         return gamesFilter
     }

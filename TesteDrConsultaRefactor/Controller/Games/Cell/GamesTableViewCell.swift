@@ -20,6 +20,7 @@ class GamesTableViewCell: UITableViewCell {
         gameTitleLabel.text = game.game
         positionLabel.text = "#\(game.position)"
         viewersLabel.text = "\(game.viewers)"
+        logoImageView.downloadImage(from: game.image)
     }
     
 }

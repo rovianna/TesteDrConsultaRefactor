@@ -23,9 +23,9 @@ class Game {
     }
     
     init(withJson json: JSON){
-        self.game = json["game"].stringValue
+        self.game = json["game"]["name"].stringValue
         self.position = json["viewers"].intValue
-        self.image = json["logo"]["small"].stringValue
+        self.image = json["game"]["logo"]["small"].stringValue
         self.viewers = json["viewers"].intValue
     }
 }
