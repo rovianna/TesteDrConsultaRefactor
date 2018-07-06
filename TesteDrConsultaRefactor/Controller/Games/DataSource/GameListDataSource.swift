@@ -42,6 +42,14 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView = tableView
+        
+        if self.tableView(self.tableView!, numberOfRowsInSection: 1) == 0 {
+            let emptyStateLabel = UILabel(frame: (self.tableView?.frame)!)
+            emptyStateLabel.text = "Nenhum jogo encontrado"
+            self.tableView?.backgroundView = emptyStateLabel
+        } else {
+            self.tableView?.backgroundView = nil
+        }
     }
     
     func filterGames(data: [Game]) -> [Game] {

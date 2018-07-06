@@ -48,12 +48,9 @@ class GameSort : GameFilter {
         })
         return gamesFilter
     }
-    
 }
 
 class FilterViewController: UIViewController {
-    
-    
     @IBOutlet weak var toFilterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var quantitySelectedLabel: UILabel!
     var quantitySlider : Int = 25 {

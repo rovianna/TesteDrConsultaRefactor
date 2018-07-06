@@ -75,7 +75,6 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
         loading?.hide()
         loading = nil
     }
-    
 }
 
 extension GameFilterViewController: GameListDataSourceDelegate {
