@@ -191,10 +191,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ySx-jS-wmF">
-                                <rect key="frame" x="16" y="40" width="343" height="472"/>
+                                <rect key="frame" x="16" y="40" width="343" height="558"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tRu-K6-1Sd">
-                                <rect key="frame" x="16" y="585" width="343" height="61.5"/>
+                                <rect key="frame" x="16" y="605.5" width="343" height="41"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5L-3Z-ENH">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -216,7 +216,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcY-MJ-xAu">
                                         <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Popularidade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7I-2P-CFx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Posição:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7I-2P-CFx">
                                                 <rect key="frame" x="0.0" y="0.0" width="292" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,34 +230,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-IF-uGZ">
-                                        <rect key="frame" x="0.0" y="41" width="343" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Gênero:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-4u-OO7">
-                                                <rect key="frame" x="0.0" y="0.0" width="304.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ação" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wX9-8p-Jtj">
-                                                <rect key="frame" x="304.5" y="0.0" width="38.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qJS-IF-uGZ" firstAttribute="leading" secondItem="tRu-K6-1Sd" secondAttribute="leading" id="1WC-s3-vhS"/>
-                                    <constraint firstAttribute="trailing" secondItem="qJS-IF-uGZ" secondAttribute="trailing" id="6cB-xs-c9n"/>
                                     <constraint firstItem="d5L-3Z-ENH" firstAttribute="top" secondItem="tRu-K6-1Sd" secondAttribute="top" id="8sK-Cf-EvG"/>
                                     <constraint firstItem="d5L-3Z-ENH" firstAttribute="leading" secondItem="tRu-K6-1Sd" secondAttribute="leading" id="MkV-WI-Phk"/>
-                                    <constraint firstAttribute="bottom" secondItem="qJS-IF-uGZ" secondAttribute="bottom" id="PiB-Jx-98W"/>
                                     <constraint firstAttribute="trailing" secondItem="d5L-3Z-ENH" secondAttribute="trailing" id="Tnw-pn-yYG"/>
                                     <constraint firstItem="LcY-MJ-xAu" firstAttribute="leading" secondItem="tRu-K6-1Sd" secondAttribute="leading" id="hC0-DU-nDS"/>
                                     <constraint firstAttribute="trailing" secondItem="LcY-MJ-xAu" secondAttribute="trailing" id="hDM-wr-cAb"/>
-                                    <constraint firstItem="qJS-IF-uGZ" firstAttribute="top" secondItem="LcY-MJ-xAu" secondAttribute="bottom" id="hcr-JM-NwI"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -266,13 +245,18 @@
                             <constraint firstItem="bou-FJ-TMn" firstAttribute="bottom" secondItem="tRu-K6-1Sd" secondAttribute="bottom" constant="20.5" id="5qk-hL-oG2"/>
                             <constraint firstItem="ySx-jS-wmF" firstAttribute="leading" secondItem="bou-FJ-TMn" secondAttribute="leading" constant="16" id="FBW-iD-7JB"/>
                             <constraint firstItem="bou-FJ-TMn" firstAttribute="trailing" secondItem="ySx-jS-wmF" secondAttribute="trailing" constant="16" id="bbY-pY-8Lx"/>
-                            <constraint firstItem="tRu-K6-1Sd" firstAttribute="top" secondItem="ySx-jS-wmF" secondAttribute="bottom" constant="73" id="hYC-af-Exk"/>
+                            <constraint firstItem="tRu-K6-1Sd" firstAttribute="top" secondItem="ySx-jS-wmF" secondAttribute="bottom" constant="7.5" id="hYC-af-Exk"/>
                             <constraint firstItem="tRu-K6-1Sd" firstAttribute="leading" secondItem="bou-FJ-TMn" secondAttribute="leading" constant="16" id="iVx-gX-cF5"/>
                             <constraint firstItem="ySx-jS-wmF" firstAttribute="top" secondItem="bou-FJ-TMn" secondAttribute="top" constant="20" id="n48-um-bjD"/>
                             <constraint firstItem="bou-FJ-TMn" firstAttribute="trailing" secondItem="tRu-K6-1Sd" secondAttribute="trailing" constant="16" id="pUO-ko-wLu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bou-FJ-TMn"/>
                     </view>
+                    <connections>
+                        <outlet property="gameDetailImageView" destination="ySx-jS-wmF" id="1wh-IQ-m0V"/>
+                        <outlet property="positionDetailLabel" destination="nVN-Xl-FNf" id="HfL-9F-sY7"/>
+                        <outlet property="viewersDetailLabel" destination="Ykv-Gk-kAl" id="veX-Af-xxB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8S-B3-cVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

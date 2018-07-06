@@ -34,6 +34,10 @@ class GameListDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var delegate: GameListDataSourceDelegate?
     init(tableView: UITableView, games: [Game]){
         super.init()
+        
+        for (i, game) in games.enumerated() {
+            game.position = i + 1
+        }
         self.popularGames = games
         tableView.delegate = self
         tableView.dataSource = self

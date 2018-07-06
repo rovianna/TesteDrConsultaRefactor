@@ -10,16 +10,21 @@ import UIKit
 
 class GameDetailsViewController: UIViewController {
     
-    var gameImageDescription = UIImageView()
     var game : Game?
-    var viewersLabel = UILabel()
-    var popularityLabel = UILabel()
+    
+    @IBOutlet weak var gameDetailImageView: UIImageView!
+    @IBOutlet weak var viewersDetailLabel: UILabel!
+    @IBOutlet weak var positionDetailLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(game != nil, "A Game must be passed")
         guard let game = game else { return }
         self.navigationItem.title = "\(game.game)"
+        gameDetailImageView.downloadImage(from: game.bigImage)
+        viewersDetailLabel.text = "\(game.viewers)"
+        positionDetailLabel.text = "#\(game.position)"
     }
 
 }

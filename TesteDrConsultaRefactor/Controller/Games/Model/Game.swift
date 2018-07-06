@@ -11,13 +11,15 @@ import SwiftyJSON
 
 class Game {
     var game: String
-    var image: String
+    var thumbnailImage: String
+    var bigImage: String
     var position: Int
     var viewers: Int
     
-    init(game: String, image: String, position: Int, viewers: Int) {
+    init(game: String, thumnailImage: String, bigImage: String, position: Int, viewers: Int) {
         self.game = game
-        self.image = image
+        self.thumbnailImage = thumnailImage
+        self.bigImage = bigImage
         self.position = position
         self.viewers = viewers
     }
@@ -25,7 +27,8 @@ class Game {
     init(withJson json: JSON){
         self.game = json["game"]["name"].stringValue
         self.position = json["viewers"].intValue
-        self.image = json["game"]["logo"]["small"].stringValue
+        self.thumbnailImage = json["game"]["box"]["small"].stringValue
+        self.bigImage = json["game"]["box"]["large"].stringValue
         self.viewers = json["viewers"].intValue
     }
 }

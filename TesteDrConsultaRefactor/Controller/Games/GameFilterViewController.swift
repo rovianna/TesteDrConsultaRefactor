@@ -22,6 +22,7 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
     }
     let gameStoryboard = UIStoryboard.init(name: "Game", bundle: nil)
     let requester = GameRequester()
+    var loading: LoadingView? = nil
     var source: GameListDataSource?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,9 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
     
     /* There has to be another function to call the API */
     func loadGames(){
+        showLoading()
         requester.getTopGames { (response) in
+            self.hideLoading()
             switch response {
             case .failure(let error): print("Error: \(error)")
             case .sucess(let data): self.games = data
@@ -57,6 +60,22 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
         filterView.delegate = self
         self.navigationController?.present(filterView, animated: true, completion: nil)
     }
+    
+    func showLoading() {
+        guard self.loading == nil else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let view = self?.view else { return }
+            let loading = LoadingView.instance
+            loading.show(in: view)
+            self?.loading = loading
+        }
+    }
+    
+    func hideLoading(){
+        loading?.hide()
+        loading = nil
+    }
+    
 }
 
 extension GameFilterViewController: GameListDataSourceDelegate {
