@@ -13,7 +13,7 @@ protocol GameFilter {
 }
 
 protocol FilterViewControllerDelegate {
-    func selected(filters: [GameFilter])
+    func selected(filters: [GameFilter], quantity: Int)
 }
 
 class GameSort : GameFilter {
@@ -50,8 +50,21 @@ class GameSort : GameFilter {
     }
 }
 
+class QuantityFilter: GameFilter {
+    func apply(filters: [Game]) -> [Game] {
+        return filters
+    }
+    
+    var quantity: Int
+    
+    init(quantity: Int){
+        self.quantity = quantity
+    }
+}
+
 class FilterViewController: UIViewController {
     @IBOutlet weak var toFilterSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var quantityGameSlider: UISlider!
     @IBOutlet weak var quantitySelectedLabel: UILabel!
     var quantitySlider : Int = 25 {
         didSet {
@@ -75,7 +88,7 @@ class FilterViewController: UIViewController {
         var filter = [GameFilter]()
         let gameSort = GameSort(sortBy: toFilterSegmentedControl.selectedSegmentIndex)
         filter.append(gameSort)
-        delegate?.selected(filters: filter)
+        delegate?.selected(filters: filter, quantity: quantitySlider)
         self.dismiss(animated: true, completion: nil)
     }
     

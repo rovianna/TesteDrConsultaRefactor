@@ -55,7 +55,7 @@ class BaseRequester {
 }
 
 class GameRequester {    
-    func getTopGames(limit: String = "25", completion: @escaping (Result<[Game]>)-> Void){
+    func getTopGames(limit: Int = 25, completion: @escaping (Result<[Game]>)-> Void){
         let path = "games/top?limit=\(limit)"
         BaseRequester.shared.baseRequest(path: path, httpMethod: .get) { (response) in
             switch response.result {

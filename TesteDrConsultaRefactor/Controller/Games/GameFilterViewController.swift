@@ -9,12 +9,22 @@
 import UIKit
 
 class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
-    func selected(filters: [GameFilter]) {
+    func selected(filters: [GameFilter], quantity: Int) {
         self.source?.filters = filters
+        self.quantity = quantity
+        if quantity != 25 {
+            requester.getTopGames(limit: quantity + 1) { (response) in
+                switch response {
+                case .failure(let error): print("\(error)")
+                case .sucess(let data):
+                    self.games = data
+                }
+            }
+        }
     }
     
-    
     @IBOutlet weak var gamesTableView: UITableView!
+    
     var games = [Game]() {
         didSet {
            receiveGames(games)
@@ -24,11 +34,14 @@ class GameFilterViewController: UIViewController, FilterViewControllerDelegate {
     let requester = GameRequester()
     var loading: LoadingView? = nil
     var source: GameListDataSource?
+    var quantity = 25
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Games"
         let filterButton = UIBarButtonItem(image: #imageLiteral(resourceName: "iconFilter"), style: .plain, target: self, action: #selector(showFilterView(_:)))
+        filterButton.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = filterButton
+        
         loadGames()
     }
     

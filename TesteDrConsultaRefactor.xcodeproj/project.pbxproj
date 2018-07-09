@@ -23,9 +23,20 @@
 		4976609A20EC20B40003C2B1 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4976609920EC20B40003C2B1 /* Game.storyboard */; };
 		4976609D20EC21C60003C2B1 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4976609B20EC21C60003C2B1 /* GamesTableViewCell.swift */; };
 		4976609E20EC21C60003C2B1 /* GamesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4976609C20EC21C60003C2B1 /* GamesTableViewCell.xib */; };
+		49A3522820F39F81004EA077 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3522720F39F81004EA077 /* GameTests.swift */; };
 		49ACA88220EB849700826F4F /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACA88120EB849700826F4F /* GameDetailsViewController.swift */; };
 		49EEFBC420EAE74000259E1F /* GameListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEFBC320EAE74000259E1F /* GameListDataSource.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49A3522A20F39F81004EA077 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4920015520E902800002E6AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4920015C20E902800002E6AC;
+			remoteInfo = TesteDrConsultaRefactor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4920015D20E902800002E6AC /* TesteDrConsultaRefactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteDrConsultaRefactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +56,9 @@
 		4976609920EC20B40003C2B1 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		4976609B20EC21C60003C2B1 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		4976609C20EC21C60003C2B1 /* GamesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesTableViewCell.xib; sourceTree = "<group>"; };
+		49A3522520F39F81004EA077 /* GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A3522720F39F81004EA077 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		49A3522920F39F81004EA077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49ACA88120EB849700826F4F /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
 		49EEFBC320EAE74000259E1F /* GameListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListDataSource.swift; sourceTree = "<group>"; };
 		955B112782D9A0BAF8552D66 /* Pods-TesteDrConsultaRefactor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteDrConsultaRefactor.release.xcconfig"; path = "Pods/Target Support Files/Pods-TesteDrConsultaRefactor/Pods-TesteDrConsultaRefactor.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +75,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49A3522220F39F81004EA077 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4920015F20E902800002E6AC /* TesteDrConsultaRefactor */,
+				49A3522620F39F81004EA077 /* GameTests */,
 				4920015E20E902800002E6AC /* Products */,
 				E27A4C87EAFFCA2F59B9C22E /* Pods */,
 				B7A71D2C7855BBDAC604C221 /* Frameworks */,
@@ -78,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4920015D20E902800002E6AC /* TesteDrConsultaRefactor.app */,
+				49A3522520F39F81004EA077 /* GameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +202,15 @@
 			path = Loading;
 			sourceTree = "<group>";
 		};
+		49A3522620F39F81004EA077 /* GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				49A3522720F39F81004EA077 /* GameTests.swift */,
+				49A3522920F39F81004EA077 /* Info.plist */,
+			);
+			path = GameTests;
+			sourceTree = "<group>";
+		};
 		49EEFBC220EAE72300259E1F /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +258,24 @@
 			productReference = 4920015D20E902800002E6AC /* TesteDrConsultaRefactor.app */;
 			productType = "com.apple.product-type.application";
 		};
+		49A3522420F39F81004EA077 /* GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A3522E20F39F81004EA077 /* Build configuration list for PBXNativeTarget "GameTests" */;
+			buildPhases = (
+				49A3522120F39F81004EA077 /* Sources */,
+				49A3522220F39F81004EA077 /* Frameworks */,
+				49A3522320F39F81004EA077 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49A3522B20F39F81004EA077 /* PBXTargetDependency */,
+			);
+			name = GameTests;
+			productName = GameTests;
+			productReference = 49A3522520F39F81004EA077 /* GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +288,10 @@
 				TargetAttributes = {
 					4920015C20E902800002E6AC = {
 						CreatedOnToolsVersion = 9.4.1;
+					};
+					49A3522420F39F81004EA077 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4920015C20E902800002E6AC;
 					};
 				};
 			};
@@ -255,6 +309,7 @@
 			projectRoot = "";
 			targets = (
 				4920015C20E902800002E6AC /* TesteDrConsultaRefactor */,
+				49A3522420F39F81004EA077 /* GameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +324,13 @@
 				4920016820E902810002E6AC /* Assets.xcassets in Resources */,
 				4976609E20EC21C60003C2B1 /* GamesTableViewCell.xib in Resources */,
 				4964601920EF8B78008E04FD /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A3522320F39F81004EA077 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +397,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49A3522120F39F81004EA077 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A3522820F39F81004EA077 /* GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49A3522B20F39F81004EA077 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4920015C20E902800002E6AC /* TesteDrConsultaRefactor */;
+			targetProxy = 49A3522A20F39F81004EA077 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4920016920E902810002E6AC /* LaunchScreen.storyboard */ = {
@@ -501,6 +579,46 @@
 			};
 			name = Release;
 		};
+		49A3522C20F39F81004EA077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2EVZPD948;
+				INFOPLIST_FILE = GameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.GameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TesteDrConsultaRefactor.app/TesteDrConsultaRefactor";
+			};
+			name = Debug;
+		};
+		49A3522D20F39F81004EA077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2EVZPD948;
+				INFOPLIST_FILE = GameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.GameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TesteDrConsultaRefactor.app/TesteDrConsultaRefactor";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,6 +636,15 @@
 			buildConfigurations = (
 				4920017020E902820002E6AC /* Debug */,
 				4920017120E902820002E6AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A3522E20F39F81004EA077 /* Build configuration list for PBXNativeTarget "GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A3522C20F39F81004EA077 /* Debug */,
+				49A3522D20F39F81004EA077 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
